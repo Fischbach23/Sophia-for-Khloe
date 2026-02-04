@@ -45,7 +45,7 @@ header {
 }
 
 .page-frame {
-  background: #111;          /* black box */
+  background: #800080 ;          /* black box */
   color: white;
   padding: 48px;
   max-width: 1100px;
@@ -140,3 +140,4 @@ header {
     font-size: 2.2em;
   }
 }
+
