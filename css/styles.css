@@ -8,7 +8,7 @@ body {
 
 /* === HEADER === */
 header {
-  background-color: #000;
+  background-color: #800080;
   padding: 16px 20px;
 }
 
@@ -30,7 +30,7 @@ header {
 }
 
 .header-text h1 {
-  font-family: 'Brush Script MT', cursive;
+  font-family: Arial, sans-serif;
   font-size: 3.2em;
   color: #ffffff;
   margin: 0;
@@ -56,7 +56,7 @@ header {
 
 /* === VALENTINE GAME === */
 .valentine-question {
-  font-family: 'Brush Script MT', cursive;
+  font-family: Arial, sans-serif;
   font-weight: 800;
   font-size: 48px;
   margin: 0 0 40px;
@@ -114,7 +114,7 @@ header {
 }
 
 .result-text {
-  font-family: 'Victor Mono', cursive;
+  font-family: Arial, sans-serif;
   font-weight: 600;
   font-size: 30px;
   margin-top: 36px;
@@ -140,4 +140,5 @@ header {
     font-size: 2.2em;
   }
 }
+
 
