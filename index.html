@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will you be my Valentine?</title>
+
+  <meta name="description" content="Trying a different way of asking you to be my valentine.">
+  <meta name="author" content="Blake Fischbach">
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-layout">
+      <img
+        src="images/Glossy red heart on white background.png"
+        alt="Heart"
+        class="header-icon"
+      />
+
+      <div class="header-text">
+        <h1>Blake's Big Question</h1>
+      </div>
+
+      <img
+        src="images/ChatGPT Image Feb 3, 2026, 05_26_04 PM.png"
+        alt="Heart"
+        class="header-icon"
+      />
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <div class="content-wrapper">
+    <main class="page-frame">
+
+      <section class="valentine-card">
+        <h2 class="valentine-question">Will you be my valentine?</h2>
+
+        <div class="button-area" id="playArea">
+          <button id="yesBtn" class="btn yes" type="button">Yes</button>
+          <button id="noBtn" class="btn no" type="button">No</button>
+        </div>
+
+        <p id="result" class="result-text"></p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- FOOTER (optional, currently empty) -->
+  <footer></footer>
+
+  <!-- SCRIPT -->
+  <script>
+    const playArea = document.getElementById("playArea");
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const result = document.getElementById("result");
+
+    function moveNoButton() {
+      const areaRect = playArea.getBoundingClientRect();
+      const btnRect = noBtn.getBoundingClientRect();
+
+      const padding = 10;
+      const maxX = areaRect.width - btnRect.width - padding;
+      const maxY = areaRect.height - btnRect.height - padding;
+
+      const x = Math.max(padding, Math.random() * maxX);
+      const y = Math.max(padding, Math.random() * maxY);
+
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top  = `${y}px`;
+    }
+
+    function cursorNearNoBtn(x, y) {
+      const b = noBtn.getBoundingClientRect();
+      const threshold = 80; // higher = harder to click
+      return (
+        x > b.left - threshold &&
+        x < b.right + threshold &&
+        y > b.top - threshold &&
+        y < b.bottom + threshold
+      );
+    }
+
+    document.addEventListener("mousemove", e => {
+      if (cursorNearNoBtn(e.clientX, e.clientY)) {
+        moveNoButton();
+      }
+    });
+
+    document.addEventListener("touchstart", e => {
+      const t = e.touches[0];
+      if (t && cursorNearNoBtn(t.clientX, t.clientY)) {
+        moveNoButton();
+      }
+    }, { passive: true });
+
+    noBtn.addEventListener("click", e => {
+      e.preventDefault();
+      moveNoButton();
+    });
+
+    yesBtn.addEventListener("click", () => {
+      result.textContent = "Lets Freaking Goooooooooo!!!!!!";
+      noBtn.style.display = "none";
+    });
+
+    moveNoButton();
+  </script>
+
+</body>
+</html>
