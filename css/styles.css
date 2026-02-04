@@ -96,7 +96,7 @@ header {
 }
 
 .btn.yes {
-  background: linear-gradient(135deg, #ff6aa2, #ff2f7a);
+  background: linear-gradient(135deg, #e5e749, #e5e749);
   color: white;
   position: absolute;
   left: 16%;                 /* YES starts LEFT */
@@ -140,5 +140,4 @@ header {
     font-size: 2.2em;
   }
 }
-
 
